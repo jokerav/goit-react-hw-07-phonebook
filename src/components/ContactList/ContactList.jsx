@@ -1,5 +1,5 @@
 // import { useSelector } from 'react-redux';
-import Contact from '../Contact/Contact';
+// import Contact from '../Contact/Contact';
 // import { getVisibleContacts } from 'redux/selectors';
 import { useGetContactsByIDQuery } from '../contactsAPI/contacrsAPI';
 

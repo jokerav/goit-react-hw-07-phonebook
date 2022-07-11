@@ -5,7 +5,10 @@ import { useGetContactsByIDQuery } from '../contactsAPI/contacrsAPI';
 
 const ContactList = () => {
   // const contacts = useSelector(getVisibleContacts);
-  const { data, error, isLoading } = useGetContactsByIDQuery('1');
+  const {
+    data,
+    // , error, isLoading
+  } = useGetContactsByIDQuery('1');
   console.log(data);
   return (
     <ul>

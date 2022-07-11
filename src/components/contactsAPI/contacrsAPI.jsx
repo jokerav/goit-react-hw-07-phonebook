@@ -9,10 +9,13 @@ export const contactsApi = createApi({
     getContactsByID: builder.query({
       query: id => `contacts/${id}`,
     }),
+    getContacts: builder.query({
+      query: () => 'contacts',
+    }),
   }),
 });
 console.log(contactsApi);
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetContactsByIDQuery } = contactsApi;
+export const { useGetContactsByIDQuery, useGetContactsQuery } = contactsApi;

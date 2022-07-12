@@ -1,9 +1,6 @@
-// import { useDispatch, useSelector } from 'react-redux';
+
 import {useGetContactsQuery,useAddContactMutation} from '../contactsAPI/contactsAPI';
 import { useState } from 'react';
-// import { addContact } from 'redux/actions';
-// import { getContacts } from 'redux/selectors';
-
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');

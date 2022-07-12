@@ -9,7 +9,7 @@ const ContactForm = () => {
   const [phone, setPhone] = useState('');
   const { data:contacts} = useGetContactsQuery();
   console.log(contacts);
-  const [addContact, {isLoading:isPosting}] = useAddContactMutation();
+  const [addContact] = useAddContactMutation();
 
   const onChange = e => {
     const { name, value } = e.currentTarget;

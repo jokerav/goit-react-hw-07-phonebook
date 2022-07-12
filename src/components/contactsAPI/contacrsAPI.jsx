@@ -20,8 +20,6 @@ export const contactsApi = createApi({
         method:'DELETE',
       }),
       invalidatesTags:['contacts'],
-
-
     })
   }),
 });

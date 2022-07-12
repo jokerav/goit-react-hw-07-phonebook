@@ -1,24 +1,18 @@
 // import { useSelector } from 'react-redux';
-// import Contact from '../Contact/Contact';
+import Contact from '../Contact/Contact';
 // import { getVisibleContacts } from 'redux/selectors';
-import {
-  // useGetContactsByIDQuery,
-  useGetContactsQuery,
-} from '../contactsAPI/contacrsAPI';
+import {useGetContactsByIDQuery,useGetContactsQuery} from '../contactsAPI/contacrsAPI';
 
 const ContactList = () => {
   // const contacts = useSelector(getVisibleContacts);
-  // const {
-  //   data,
-  //   // , error, isLoading
-  // } = useGetContactsByIDQuery('2');
-  const { data1 } = useGetContactsQuery();
-  console.log(data1);
+    const { data:contacts, error, isloading }  = useGetContactsQuery();
+
+  console.log(contacts);
   return (
     <ul>
-      {/* {contacts.map(contact => (
+       {contacts.map(contact => (
         <Contact key={contact.id} contact={contact} />
-      ))} */}
+      ))}
     </ul>
   );
 };

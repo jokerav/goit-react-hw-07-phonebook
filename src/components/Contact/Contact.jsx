@@ -3,15 +3,11 @@ import PropTypes from 'prop-types';
 // import { deleteContact } from 'redux/actions';
 const Contact = ({ contact }) => {
   // const dispatch = useDispatch();
-  const {
-    name,
-    number,
-    // ,id
-  } = contact;
+  const {    name,  phone,id  } = contact;
   return (
     <li>
       <p>
-        {name} : {number}
+        {name} : {phone}
       </p>
       <button
         type="button"

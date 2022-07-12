@@ -6,8 +6,6 @@ import {useGetContactsQuery} from '../contactsAPI/contactsAPI';
 const ContactList = () => {
   // const contacts = useSelector(getVisibleContacts);
     const { data:contacts, isloading }  = useGetContactsQuery();
-
-  console.log(contacts);
   return (
     <ul>
       {isloading && <p>"Загружаем контакты"</p>}

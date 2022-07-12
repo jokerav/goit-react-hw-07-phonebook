@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { addContact } from 'redux/actions';
-import { getContacts } from 'redux/selectors';
+// import { addContact } from 'redux/actions';
+// import { getContacts } from 'redux/selectors';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  const contacts = useSelector(getContacts);
-  const dispatch = useDispatch();
+  // const contacts = useSelector(getContacts);
+  // const dispatch = useDispatch();
 
   const onChange = e => {
     const { name, value } = e.currentTarget;
@@ -22,24 +22,24 @@ const ContactForm = () => {
         return;
     }
   };
-  const isNameInPhonebook = name => {
-    const nameInLowerCase = name.toLowerCase();
-    for (const contact of contacts) {
-      if (contact.name.toLowerCase() === nameInLowerCase) {
-        return true;
-      }
-    }
-    return false;
-  };
+  // const isNameInPhonebook = name => {
+  //   const nameInLowerCase = name.toLowerCase();
+  //   for (const contact of contacts) {
+  //     if (contact.name.toLowerCase() === nameInLowerCase) {
+  //       return true;
+  //     }
+  //   }
+  //   return false;
+  // };
   const onSubmit = e => {
     e.preventDefault();
-    if (!isNameInPhonebook(name)) {
-      dispatch(addContact({ name, number }));
-      setName('');
-      setNumber('');
-    } else {
-      alert(`${name} is already in contacts`);
-    }
+    // if (!isNameInPhonebook(name)) {
+    //   // dispatch(addContact({ name, number }));
+    //   setName('');
+    //   setNumber('');
+    // } else {
+    //   alert(`${name} is already in contacts`);
+    // }
   };
 
   return (

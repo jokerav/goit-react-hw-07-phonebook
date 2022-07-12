@@ -1,4 +1,4 @@
-// import ContactForm from './ContactsForm/ContactForm';
+import ContactForm from './ContactsForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 // import Filter from './Filter/Filter';
 export const App = () => {
@@ -10,8 +10,8 @@ export const App = () => {
       }}
     >
       <h1>Phonebook</h1>
-      {/* <ContactForm /> */}
-      {/* <Filter /> */}
+       <ContactForm />
+      {/* <Filter />*/}
       <h2>Contacts</h2>
       <ContactList />
     </div>

@@ -1,7 +1,7 @@
 // import { useSelector } from 'react-redux';
 import Contact from '../Contact/Contact';
 // import { getVisibleContacts } from 'redux/selectors';
-import {useGetContactsQuery} from '../contactsAPI/contacrsAPI';
+import {useGetContactsQuery} from '../contactsAPI/contactsAPI';
 
 const ContactList = () => {
   // const contacts = useSelector(getVisibleContacts);

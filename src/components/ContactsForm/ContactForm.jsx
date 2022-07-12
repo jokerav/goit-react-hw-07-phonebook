@@ -1,13 +1,15 @@
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
+import {useGetContactsQuery,useAddContactMutation} from '../contactsAPI/contactsAPI';
 import { useState } from 'react';
 // import { addContact } from 'redux/actions';
 // import { getContacts } from 'redux/selectors';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
-  // const contacts = useSelector(getContacts);
-  // const dispatch = useDispatch();
+  const [phone, setPhone] = useState('');
+  const { data:contacts} = useGetContactsQuery();
+  console.log(contacts);
+  const [addContact, {isLoading:isPosting}] = useAddContactMutation();
 
   const onChange = e => {
     const { name, value } = e.currentTarget;
@@ -16,30 +18,30 @@ const ContactForm = () => {
         setName(value);
         break;
       case 'number':
-        setNumber(value);
+        setPhone(value);
         break;
       default:
         return;
     }
   };
-  // const isNameInPhonebook = name => {
-  //   const nameInLowerCase = name.toLowerCase();
-  //   for (const contact of contacts) {
-  //     if (contact.name.toLowerCase() === nameInLowerCase) {
-  //       return true;
-  //     }
-  //   }
-  //   return false;
-  // };
+  const isNameInPhonebook = name => {
+    const nameInLowerCase = name.toLowerCase();
+    for (const contact of contacts) {
+      if (contact.name.toLowerCase() === nameInLowerCase) {
+        return true;
+      }
+    }
+    return false;
+  };
   const onSubmit = e => {
     e.preventDefault();
-    // if (!isNameInPhonebook(name)) {
-    //   // dispatch(addContact({ name, number }));
-    //   setName('');
-    //   setNumber('');
-    // } else {
-    //   alert(`${name} is already in contacts`);
-    // }
+    if (!isNameInPhonebook(name)) {
+      (addContact({ name, phone }));
+      setName('');
+      setPhone('');
+    } else {
+      alert(`${name} is already in contacts`);
+    }
   };
 
   return (
@@ -59,7 +61,7 @@ const ContactForm = () => {
       <label>
         Number
         <input
-          value={number}
+          value={phone}
           onChange={onChange}
           type="tel"
           name="number"

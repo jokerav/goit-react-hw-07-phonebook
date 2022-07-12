@@ -1,8 +1,5 @@
 import PropTypes from 'prop-types';
-// import { useDispatch } from 'react-redux';
-// import { deleteContact } from 'redux/actions';
 import {useDeleteContactMutation} from '../contactsAPI/contacrsAPI';
-
 const Contact = ({ contact }) => {
   const [deleteContact, {isLoading:isDeleting}] = useDeleteContactMutation();
   // const dispatch = useDispatch();

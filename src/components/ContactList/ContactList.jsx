@@ -5,11 +5,12 @@ import {useGetContactsQuery} from '../contactsAPI/contacrsAPI';
 
 const ContactList = () => {
   // const contacts = useSelector(getVisibleContacts);
-    const { data:contacts, error, isloading }  = useGetContactsQuery();
+    const { data:contacts, isloading }  = useGetContactsQuery();
 
   console.log(contacts);
   return (
     <ul>
+      {isloading && <p>"Загружаем контакты"</p>}
       {contacts && contacts.map(contact => (
         <Contact key={contact.id} contact={contact} />
       ))}

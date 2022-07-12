@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
 // import { useDispatch } from 'react-redux';
 // import { deleteContact } from 'redux/actions';
+import {useDeleteContactMutation} from '../contactsAPI/contacrsAPI';
+
 const Contact = ({ contact }) => {
+  const [deleteContact, {isLoading:isDeleting}] = useDeleteContactMutation();
   // const dispatch = useDispatch();
   const {    name,  phone,id  } = contact;
   return (
@@ -11,9 +14,9 @@ const Contact = ({ contact }) => {
       </p>
       <button
         type="button"
-        // onClick={() => dispatch(deleteContact(id))}
+        onClick={() =>deleteContact(id)}
       >
-        Delete
+        {isDeleting? 'Удаляем...' : 'Удалить'}
       </button>
     </li>
   );

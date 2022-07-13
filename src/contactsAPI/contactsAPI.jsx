@@ -33,8 +33,6 @@ export const contactsApi = createApi({
     })
   }),
 });
-console.log(contactsApi);
-
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetContactsByIDQuery, useGetContactsQuery, useDeleteContactMutation, useAddContactMutation} = contactsApi;
+export const { useGetContactsQuery, useDeleteContactMutation, useAddContactMutation} = contactsApi;

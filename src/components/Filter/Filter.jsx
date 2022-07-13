@@ -1,16 +1,17 @@
-// import { changeFilter } from '../../redux/actions';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { getfilter } from 'redux/selectors';
+import { changeFilter } from '../../contactsAPI/filterSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { getfilter } from '../../contactsAPI/selectors';
+
 
 export default function Filter() {
-  // const value = useSelector(getfilter);
-  // const dispatch = useDispatch();
+  const value = useSelector(getfilter);
+  const dispatch = useDispatch();
   return (
     <label>
       Find contacts by name
       <input
-        // value={value}
-        // onChange={e => dispatch(changeFilter(e.target.value))}
+        value={value}
+        onChange={e => dispatch(changeFilter(e.target.value))}
         type="text"
         name="filter"
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"

@@ -4,7 +4,6 @@ const ContactForm = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const { data:contacts} = useGetContactsQuery();
-  console.log(contacts);
   const [addContact] = useAddContactMutation();
 
   const onChange = e => {

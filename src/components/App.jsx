@@ -1,6 +1,6 @@
 import ContactForm from './ContactsForm/ContactForm';
 import ContactList from './ContactList/ContactList';
-// import Filter from './Filter/Filter';
+import Filter from './Filter/Filter';
 export const App = () => {
   return (
     <div
@@ -11,7 +11,7 @@ export const App = () => {
     >
       <h1>Phonebook</h1>
        <ContactForm />
-      {/* <Filter />*/}
+      <Filter />
       <h2>Contacts</h2>
       <ContactList />
     </div>

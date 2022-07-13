@@ -9,7 +9,7 @@ export default function Filter() {
     <label>
       Find contacts by name
       <input
-        value={value}
+        // value={value}
         // onChange={e => dispatch(changeFilter(e.target.value))}
         type="text"
         name="filter"

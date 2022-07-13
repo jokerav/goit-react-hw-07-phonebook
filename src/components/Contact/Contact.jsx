@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {useDeleteContactMutation} from '../contactsAPI/contactsAPI';
+import {useDeleteContactMutation} from '../../contactsAPI/contactsAPI';
 const Contact = ({ contact }) => {
   const [deleteContact, {isLoading:isDeleting}] = useDeleteContactMutation();
   // const dispatch = useDispatch();

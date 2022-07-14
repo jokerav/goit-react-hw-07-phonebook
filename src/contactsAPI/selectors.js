@@ -1,10 +1,12 @@
+const getfilter = state => state.filter;
 
-export const getfilter = state => state.filter;
-export const  getContacts = state => state.contactsApi.queries.getContacts.data;
+const getContacts = state =>
+  state.contactsAPI.queries.getContacts(undefined).data;
 
-export const getVisibleContacts = async state => {
+const getVisibleContacts = state => {
   const filter = getfilter(state);
-  const contacts = await getContacts(state);
+  const contacts = getContacts(state);
   const normFilter = filter.toLowerCase();
   return contacts.filter(({ name }) => name.toLowerCase().includes(normFilter));
 };
+export { getfilter, getContacts, getVisibleContacts };

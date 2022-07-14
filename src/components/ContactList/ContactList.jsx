@@ -5,7 +5,6 @@ import { useGetContactsQuery } from '../../contactsAPI/contactsAPI';
 const ContactList = () => {
   const filter = useSelector(getFilter);
   const { data: contacts = [], error, isLoading } = useGetContactsQuery();
-  console.log(filter, contacts);
 
   const getVisibleContacts = () => {
     const normFilter = filter.toLowerCase();
@@ -15,7 +14,6 @@ const ContactList = () => {
   };
 
   const visibleContacts = getVisibleContacts();
-  console.log(visibleContacts);
 
   return (
     <ul>

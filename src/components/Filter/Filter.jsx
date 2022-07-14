@@ -1,10 +1,9 @@
 import { changeFilter } from '../../contactsAPI/filterSlice';
 import { useSelector, useDispatch } from 'react-redux';
-import { getfilter } from '../../contactsAPI/selectors';
-
+import { getFilter } from '../../contactsAPI/selectors';
 
 export default function Filter() {
-  const value = useSelector(getfilter);
+  const value = useSelector(getFilter);
   const dispatch = useDispatch();
   return (
     <label>
